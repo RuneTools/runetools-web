@@ -1,0 +1,33 @@
+header {
+    display: flex;
+    align-items: center;
+    margin: -20px -20px 0;
+    padding: 10px 30px;
+
+    a {
+        color: inherit;
+        text-decoration: inherit;
+    }
+
+    h1 {
+        flex-grow: 1;
+        margin: 0;
+    }
+}
+
+.header-settings {
+    margin-left: 30px;
+    font-size: 23pt;
+}
+
+.runetools-dark {
+    header {
+        background: mix(#121212, #fff, 93%);
+    }
+}
+
+.runetools-light {
+    header {
+        background: mix(#fff, #000, 93%);
+    }
+}

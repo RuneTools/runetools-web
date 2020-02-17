@@ -1,0 +1,90 @@
+a, h1, h2, h3, h4, h5, h6, strong {
+    color: rgba(255, 255, 255, .87);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: normal;
+}
+
+img {
+    max-width: 100%;
+}
+
+body {
+    margin: 20px;
+    font: 12pt Calibri, Arial, Helvetica, sans-serif;
+}
+
+.block {
+    margin-top: 30px;
+    padding: 10px;
+    border-radius: 6px;
+    overflow: hidden;
+
+    h3 {
+        margin: -10px -10px 10px;
+        padding: 10px;
+    }
+}
+
+.list-group {
+    margin-top: 30px;
+}
+
+.list-group-item {
+    padding: 10px;
+
+    &:first-child {
+        border-radius: 6px 6px 0 0;
+    }
+
+    &:last-child {
+        border-radius: 0 0 6px 6px;
+    }
+}
+
+body.runetools-dark {
+        color: rgba(255, 255, 255, .6);
+        background: #121212;
+}
+
+.runetools-dark {
+    a, h1, h2, h3, h4, h5, h6, strong {
+        color: rgba(255, 255, 255, .87);
+    }
+
+    .block {
+        background: mix(#121212, #fff, 95%);
+    
+        h3 {
+            background: mix(#121212, #fff, 93%);
+        }
+    }
+
+    .list-group-item {
+        background: mix(#121212, #fff, 95%);
+    }
+}
+
+body.runetools-light {
+    color: rgba(0, 0, 0, .6);
+    background: #fff;
+}
+
+.runetools-light {
+    a, h1, h2, h3, h4, h5, h6, strong {
+        color: rgba(0, 0, 0, .87);
+    }
+
+    .block {
+        background: mix(#fff, #000, 95%);
+    
+        h3 {
+            background: mix(#fff, #000, 93%);
+        }
+    }
+
+    .list-group-item {
+        background: mix(#fff, #000, 95%);
+    }
+}

@@ -1,0 +1,12 @@
+.block-settings {
+    display: flex;
+    flex-direction: column;
+
+    input {
+        margin-right: 8px;
+    }
+
+    label {
+        margin-top: 5px;
+    }
+}

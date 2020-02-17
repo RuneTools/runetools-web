@@ -1,0 +1,17 @@
+.list-group-repeatable h3 {
+    margin: 0;
+}
+
+.block-repeatable h3, .list-group-repeatable h3 {
+    cursor: pointer;
+}
+
+.list-group-repeatable h3 i {
+    margin-right: 6px;
+    color: #0c0;
+}
+
+.block-repeatable h3 i {
+    margin-right: 6px;
+    color: #f00;
+}
