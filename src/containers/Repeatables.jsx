@@ -213,48 +213,47 @@ function findRepeatableById(id) {
     return REPEATABLES.find(it => it.id === id);
 }
 
-function IncompleteRepeatable({ repeatable, setComplete }) {
+function Repeatable({ completed, repeatable, setComplete }) {
     const { component: Component, id, name, props } = repeatable;
     const [title, setTitle] = useState(repeatable.name);
 
+    const icon = completed
+        ? <i className="las la-check"></i>
+        : <i className="las la-times"></i>
+
     return (
-        <div className="block block-repeatable">
-            <h3 onClick={() => setComplete(id, true)}>
-                <i className="las la-times"></i> {title}
+        <div className={`block block-repeatable ${completed ? 'complete' : 'incomplete'}`}>
+            <h3 onClick={() => setComplete(id, !completed)}>
+                {icon} {title}
             </h3>
-            <Component
+            {!completed && <Component
                 {...props}
                 setTitle={title => setTitle(`${name} - ${title}`)}
-            />
+            />}
         </div>
     );
 }
 
 function RepeatableSection({ completed, setComplete, title, type }) {
-    const repeatables = REPEATABLES.filter(it => it.type === type);
-    const complete = repeatables.filter(it => completed.indexOf(it.id) !== -1);
-    const incomplete = repeatables.filter(it => completed.indexOf(it.id) === -1);
+    const [expanded, setExpanded] = useState(true);
+
+    const icon = expanded
+        ? <i className="las la-minus"></i>
+        : <i className="las la-plus"></i>
 
     return <>
-        <h2>{title}</h2>
+        <section className="repeatable-section">
+            <h2 onClick={() => setExpanded(!expanded)}>{icon} {title}</h2>
 
-        {incomplete.map(it =>
-            <IncompleteRepeatable
-                key={it.id}
-                repeatable={it}
-                setComplete={setComplete}
-            />
-        )}
-
-        <div className="list-group list-group-repeatable">
-            {complete.map(({ id, name }) => (
-                <div key={id} className="list-group-item">
-                    <h3 onClick={() => setComplete(id, false)}>
-                        <i className="las la-check"></i> {name}
-                    </h3>
-                </div>
-            ))}
-        </div>
+            {expanded && REPEATABLES.filter(it => it.type === type).map(it =>
+                <Repeatable
+                    completed={completed.indexOf(it.id) !== -1}
+                    key={it.id}
+                    repeatable={it}
+                    setComplete={setComplete}
+                />
+            )}
+        </section>
     </>;
 }
 

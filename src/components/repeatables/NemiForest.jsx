@@ -55,7 +55,7 @@ export default function NemiForest({ setTitle }) {
     }
 
     return <>
-        <img src={location.mapUrl} alt={`World ${location.world} map`} />
+        <p><img src={location.mapUrl} alt={`World ${location.world} map`} /></p>
         <p>Location posted by {location.author} on <a href="https://reddit.com/r/nemiforest">/r/nemiforest</a></p>
     </>;
 }

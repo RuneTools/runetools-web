@@ -1,17 +1,31 @@
-.list-group-repeatable h3 {
-    margin: 0;
-}
-
-.block-repeatable h3, .list-group-repeatable h3 {
+.repeatable-section h2,
+.block-repeatable h3 {
     cursor: pointer;
 }
 
-.list-group-repeatable h3 i {
-    margin-right: 6px;
-    color: #0c0;
-}
+.block-repeatable {
+    margin: 0;
+    padding-bottom: 0;
+    border-radius: 6px 6px 0 0;
 
-.block-repeatable h3 i {
-    margin-right: 6px;
-    color: #f00;
+    + .block-repeatable {
+        border-radius: 0;
+    }
+
+    &:last-child {
+        border-radius: 0 0 6px 6px;
+    }
+
+    h3 {
+        margin-bottom: 0;
+    }
+
+    h3 i {
+        margin-right: 6px;
+        color: #f00;
+    }
+
+    &.complete h3 i {
+        color: #0c0;
+    }
 }
