@@ -20,7 +20,7 @@ export default function NemiForest({ setTitle }) {
         fetch(`${process.env.API_HOST}/api/v1/nemi-forest`, { signal: abortController.signal })
             .then(res => {
                 if (res.status === 404) {
-                    return setLocation(DEPLETED);
+                    return dispatch(updateNemiForestAction(DEPLETED));
                 }
 
                 return res.json().then(location => {
