@@ -6,6 +6,7 @@ import { dateToUtc, isSameDayUtc, isSameMonthUtc, isSameResetWeek, truncateDateU
 import { sendNotification } from '../util/notification';
 import { REPEATABLE_DAILY, REPEATABLE_MONTHLY, REPEATABLE_WEEKLY } from '../util/repeatables';
 import './Repeatables.scss';
+import WikiLink from '../components/util/WikiLink.jsx';
 
 const REPEATABLES = [
     {
@@ -16,6 +17,17 @@ const REPEATABLES = [
         props: {
             content: (
                 <p>Kill Agoroth twice to receive bonus experience pearls. Get there quickly using a games necklace.</p>
+            )
+        }
+    },
+    {
+        id: 'bacon',
+        name: 'Bacon',
+        type: REPEATABLE_WEEKLY,
+        component: Simple,
+        props: {
+            content: (
+                <p>Claim bacon or pig familiar pouches from Eli Bacon in his basement at the Falador farm.</p>
             )
         }
     },
@@ -41,17 +53,28 @@ const REPEATABLES = [
             )
         }
     },
-    // {
-    //     id: 'circus',
-    //     name: 'Balthazar Beauregard\'s Big Top Bonanza',
-    //     type: REPEATABLE_WEEKLY,
-    //     component: Simple,
-    //     props: {
-    //         content: (
-    //             <p>WIP</p>
-    //         )
-    //     }
-    // },
+    {
+        id: 'circus',
+        name: 'Balthazar Beauregard\'s Big Top Bonanza',
+        type: REPEATABLE_WEEKLY,
+        component: Simple,
+        props: {
+            content: (
+                <p>See the <WikiLink page="Balthazar Beauregard's Big Top Bonanza">wiki</WikiLink> for the weeks' location.</p>
+            )
+        }
+    },
+    {
+        id: 'corrupted-scarabs',
+        name: 'Corrupted Scarabs',
+        type: REPEATABLE_DAILY,
+        component: Simple,
+        props: {
+            content: (
+                <p>Crush scarabs around the Shifting Tombs entrances throughout Menaphos for slayer experience and gold. Join the <strong>soulobby</strong> friends chat for callouts. Experience decreases with number squished and resets daily.</p>
+            )
+        }
+    },
     {
         id: 'crystal-sandstone',
         name: 'Crystal-Flecked Sandstone',
@@ -60,6 +83,17 @@ const REPEATABLES = [
         props: {
             content: (
                 <p>Mine 50 sandstone from Prifddinas' Ithell district, and if you have 115 dungeoneering, 25 sandstone in the Edimmu resource dungeon.</p>
+            )
+        }
+    },
+    {
+        id: 'familiarisation',
+        name: 'Familiarisation',
+        type: REPEATABLE_WEEKLY,
+        component: Simple,
+        props: {
+            content: (
+                <p>Complete the familiarisation minigame. See the <WikiLink page="Familiarisation">wiki</WikiLink> for information on locating the currently active obelisk.</p>
             )
         }
     },
@@ -81,7 +115,30 @@ const REPEATABLES = [
         component: Simple,
         props: {
             content: (
-                <p>Build all of the god statues for construction and prayer/slayer experience. See <a href="https://runescape.wiki/w/God_Statues#Locations" rel="noopener noreferrer" target="_blank">this wiki</a> for locations.</p>
+                <p>Build all of the god statues for construction and prayer/slayer experience. See <WikiLink page="God Statues" section="Locations">this wiki</WikiLink> for locations.</p>
+            )
+        }
+    },
+    // TODO: A better widget can be made to say if the next cache will give the buff or not.
+    {
+        id: 'guthix-cache',
+        name: 'Guthix Cache',
+        type: REPEATABLE_DAILY,
+        component: Simple,
+        props: {
+            content: (
+                <p>Enter the Guthix Cache at the top of the hour and earn up to 200 points (100 per game max) per day for divination experience, and during select hours, a 10% chance to convert all memories in your inventory.</p>
+            )
+        }
+    },
+    {
+        id: 'hanky-points',
+        name: 'Hanky Points',
+        type: REPEATABLE_WEEKLY,
+        component: Simple,
+        props: {
+            content: (
+                <p>Collect and hand in hanky points collected in the Lumbridge Thieves' Guild.</p>
             )
         }
     },
@@ -103,7 +160,7 @@ const REPEATABLES = [
         component: Simple,
         props: {
             content: (
-                <p>Use your Jack of Trades aura to gain experience. See <a href="https://runescape.wiki/w/Jack_of_trades_aura/Routines" rel="noopener noreferrer" target="_blank">this wiki</a> for strategies.</p>
+                <p>Use your Jack of Trades aura to gain experience. See <WikiLink page="Jack of trades aura/Routines">this wiki</WikiLink> for strategies.</p>
             )
         }
     },
@@ -113,6 +170,7 @@ const REPEATABLES = [
         type: REPEATABLE_DAILY,
         component: NemiForest
     },
+    // TODO: A better widget can probably be made to show the locations of the penguins on world 60.
     {
         id: 'penguins',
         name: 'Penguin Hide and Seek',
@@ -165,6 +223,39 @@ const REPEATABLES = [
         props: {
             content: (
                 <p>Kill the skeletal horror near the rag and bone man for slayer and prayer experience. An invitation box can be used to teleport nearby.</p>
+            )
+        }
+    },
+    {
+        id: 'solomons-store',
+        name: 'Solomon\'s Store',
+        type: REPEATABLE_MONTHLY,
+        component: Simple,
+        props: {
+            content: (
+                <p>Claim your free reward from Solomon's Store.</p>
+            )
+        }
+    },
+    {
+        id: 'soul-obelisk',
+        name: 'Soul Obelisk',
+        type: REPEATABLE_DAILY,
+        component: Simple,
+        props: {
+            content: (
+                <p>Gain 20,000 reputation with a Menaphos faction, join the <strong>soulobby</strong> friends chat for location callouts.</p>
+            )
+        }
+    },
+    {
+        id: 'strange-rocks',
+        name: 'Strange Rocks',
+        type: REPEATABLE_WEEKLY,
+        component: Simple,
+        props: {
+            content: (
+                <p>Complete the statue in the Varrock museum using strange rocks discovered while skilling.</p>
             )
         }
     },
